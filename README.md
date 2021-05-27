@@ -11,6 +11,13 @@ Gerar projeto utilizando do tutorial:
 
         Microsoft:
             dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount --version 5.0.6
+            Tuto:
+                https://docs.microsoft.com/pt-br/aspnet/core/security/authentication/social/microsoft-logins?view=aspnetcore-5.0
+                App Id (cliente): f54ce8b2-a353-42fe-8ec4-f6247663ad07
+                Objeto Id: 30d03016-7c67-4318-ab36-26f4c3b8d749
+                Diretório Id (locatário): f8cdef31-a31e-4b4a-93e4-5f571e91255a
+                Valor: 57hECE._Wr~-oTcH9RKJN8yc~V59H6m.w-
+                Secret Key: 24b2e7f1-203a-426e-861f-cf789be97566
 
         Facebook:
             dotnet add package Microsoft.AspNetCore.Authentication.Facebook --version 5.0.6

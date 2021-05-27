@@ -36,10 +36,11 @@ namespace autenticacao_Oauth
             services.AddRazorPages();
 
             // FACEBOOK AUTHENTICATION SERVICE
-            services.AddAuthentication().AddFacebook(facebookOptions =>
-            {
+            services.AddAuthentication()
+            .AddFacebook(facebookOptions =>{
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+                options.AccessDeniedPath = "/AccessDeniedPathInfo"; // verificar isso, criar rota
             });
         }
 
