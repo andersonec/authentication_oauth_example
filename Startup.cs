@@ -37,10 +37,24 @@ namespace autenticacao_Oauth
 
             // FACEBOOK AUTHENTICATION SERVICE
             services.AddAuthentication()
-            .AddFacebook(facebookOptions =>{
+            .AddMicrosoftAccount(microsoftOptions =>
+            {
+                microsoftOptions.ClientId = Configuration["Authentication:Microsoft:ClientId"];
+                microsoftOptions.ClientSecret = Configuration["Authentication:Microsoft:ClientSecret"];
+            })
+            .AddGoogle(options =>
+            {
+                IConfigurationSection googleAuthNSection =
+                    Configuration.GetSection("Authentication:Google");
+
+                options.ClientId = googleAuthNSection["ClientId"];
+                options.ClientSecret = googleAuthNSection["ClientSecret"];
+            })
+            .AddFacebook(facebookOptions =>
+            {
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-                options.AccessDeniedPath = "/AccessDeniedPathInfo"; // verificar isso, criar rota
+                facebookOptions.AccessDeniedPath = "/AccessDeniedPathInfo"; // verificar isso, criar rota
             });
         }
 

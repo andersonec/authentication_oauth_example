@@ -8,6 +8,8 @@ Gerar projeto utilizando do tutorial:
     Configurando provedores de autenticação por logon: 
         Google:
             dotnet add package Microsoft.AspNetCore.Authentication.Google --version 5.0.6
+            Client Id: 83849151947-lla6l5mrep1fsn0bpj8gvo098e4t6ldt.apps.googleusercontent.com
+            Client Key: M_GnWZ1VrBtP7KQXrmwk-xHu
 
         Microsoft:
             dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount --version 5.0.6
